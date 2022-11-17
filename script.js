@@ -6,13 +6,13 @@ canvas.height = innerHeight;
 
 class Paddle {
     constructor({ position }) {
-        this.position = position
+        this.position = position;
         this.velocity = {
             x: 0,
             y: 0
         }
-        this.width = 10
-        this.height = 100
+        this.width = 10;
+        this.height = 100;
     }
 
     draw() {
@@ -21,22 +21,25 @@ class Paddle {
             this.position.x, 
             this.position.y,
             this.width,
-            this.height)
+            this.height);
     }
 
     update() {
         this.draw()
 
-        if (this.position.y + this.velocity.y > 0 && this.position.y + this.height + this.velocity.y < canvas.height)
-        this.position.y += this.velocity.y
+        if (this.position.y + this.velocity.y > 0 && 
+            this.position.y + this.height + this.velocity.y < canvas.height) {
+
+            this.position.y += this.velocity.y;
+        }
     }
 };
 
 class Ball {
     constructor({ position }) {
-        this.position = position
+        this.position = position;
 
-        const speed = 5;
+        const speed = 8;
 
         const direction = {
             x: Math.random() - 0.5 >= 0 ? -speed : speed,
@@ -57,25 +60,29 @@ class Ball {
             this.position.x, 
             this.position.y, 
             this.width, 
-            this.height)
+            this.height);
     }
 
     update() {
-        this.draw()
+        this.draw();
 
         const rightSide = this.position.x + this.width + this.velocity.x;
         const leftSide = this.position.x + this.velocity.x;
         const bottomSide = this.position.y + this.height;
         const topSide = this.position.y;
 
-        // [paddle 1 colision]
-        if (leftSide <= paddle1.position.x + paddle1.width && bottomSide >= paddle1.position.y && topSide <= paddle1.position.y + paddle1.height) {
+        // [paddle 1 collision]
+        if (leftSide <= paddle1.position.x + paddle1.width && 
+            bottomSide >= paddle1.position.y && 
+            topSide <= paddle1.position.y + paddle1.height) {
 
             this.velocity.x = -this.velocity.x;
         }
 
-        // [paddle 2 colision]
-        if ((rightSide >= paddle2.position.x && bottomSide >= paddle2.position.y && topSide <= paddle2.position.y + paddle2.height) ||  leftSide <= 0) {
+        // [paddle 2 collision]
+        if (rightSide >= paddle2.position.x && 
+            bottomSide >= paddle2.position.y && 
+            topSide <= paddle2.position.y + paddle2.height) {
 
             this.velocity.x = -this.velocity.x;
         }
@@ -126,7 +133,7 @@ animate()
 
 addEventListener('keydown', (event) => {
 
-    const speed = 9;
+    const speed = 14;
 
     switch (event.key) {
         // [go up]
