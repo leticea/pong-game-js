@@ -108,10 +108,12 @@ const paddle1 = new Paddle({
 
 const paddle2 = new Paddle({
     position: {
-        x: canvas.width - 10 * 2,
+        x: canvas.width - 20 * 2,
         y: 100
     }
 });
+
+//canvas.width - 10 * 2
 
 const ball = new Ball({
     position: {
