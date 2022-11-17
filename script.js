@@ -5,7 +5,7 @@ canvas.width = innerWidth;
 canvas.height = innerHeight;
 
 class Paddle {
-    constructor({position}) {
+    constructor({ position }) {
         this.position = position
         this.velocity = {
             x: 0,
@@ -33,11 +33,17 @@ class Paddle {
 };
 
 class Ball {
-    constructor({position}) {
+    constructor({ position }) {
         this.position = position
+
+        const direction = {
+            x: Math.random() - 0.5 >= 0 ? -1 : 1,
+            y: Math.random() - 0.5 >= 0 ? -1 : 1,
+        }
+
         this.velocity = {
-            x: 1,
-            y: 1
+            x: direction.x,
+            y: direction.y
         }
         this.width = 20
         this.height = 20
