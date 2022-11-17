@@ -32,6 +32,24 @@ class Paddle {
     }
 };
 
+class Ball {
+    constructor({position}) {
+        this.position = position
+        this.velocity = {
+            x: 1,
+            y: 1
+        }
+    }
+
+    draw() {
+        c.fillRect(
+            this.position.x, 
+            this.position.y, 
+            this.width, 
+            this.height)
+    }
+};
+
 const paddle1 = new Paddle({
     position: {
         x: 10,
