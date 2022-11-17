@@ -23,6 +23,13 @@ class Paddle {
             this.width,
             this.height)
     }
+
+    update() {
+        this.draw()
+
+        if (this.position.y > 0 && this.position.y + this.height < canvas.height)
+        this.position.y += this.velocity.y
+    }
 };
 
 const paddle1 = new Paddle({
@@ -43,8 +50,8 @@ function animate() {
     requestAnimationFrame(animate)
     c.fillStyle = 'black'
     c.fillRect(0, 0, canvas.width, canvas.height)
-    paddle1.draw()
-    paddle2.draw()
+    paddle1.update()
+    paddle2.update()
 };
 
 animate()
