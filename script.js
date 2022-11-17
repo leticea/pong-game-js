@@ -36,17 +36,19 @@ class Ball {
     constructor({ position }) {
         this.position = position
 
+        const speed = 3;
+
         const direction = {
-            x: Math.random() - 0.5 >= 0 ? 5 : 7,
-            y: Math.random() - 0.5 >= 0 ? 5 : 7,
+            x: Math.random() - 0.5 >= 0 ? -speed : speed,
+            y: Math.random() - 0.5 >= 0 ? -speed : speed,
         }
 
         this.velocity = {
             x: direction.x,
             y: direction.y
         }
-        this.width = 20
-        this.height = 20
+        this.width = 20;
+        this.height = 20;
     }
 
     draw() {
@@ -66,19 +68,26 @@ class Ball {
         const bottomSide = this.position.y + this.height;
         const topSide = this.position.y;
 
+        // [paddle 1 colision]
+        if (leftSide <= paddle1.position.x + paddle1.width && bottomSide >= paddle1.position.y && topSide <= paddle1.position.y + paddle1.height) {
+
+            this.velocity.x = -this.velocity.x;
+        }
+
+        // [paddle 2 colision]
         if ((rightSide >= paddle2.position.x && bottomSide >= paddle2.position.y && topSide <= paddle2.position.y + paddle2.height) ||  leftSide <= 0) {
 
-            this.velocity.x = -this.velocity.x
+            this.velocity.x = -this.velocity.x;
         }
 
         // [reverse y directions]
         if (this.position.y + this.height + this.velocity.y >= canvas.width || this.position.y + this.velocity.y <= 0) {
 
-            this.velocity.y = -this.velocity.y
+            this.velocity.y = -this.velocity.y;
         }
 
-        this.position.x += this.velocity.x
-        this.position.y += this.velocity.y
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
     }
 };
 
@@ -117,7 +126,7 @@ animate()
 
 addEventListener('keydown', (event) => {
 
-    const speed = 7;
+    const speed = 4;
 
     switch (event.key) {
         // [go up]
