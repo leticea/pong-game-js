@@ -27,7 +27,7 @@ class Paddle {
     update() {
         this.draw()
 
-        if (this.position.y > 0 && this.position.y + this.height < canvas.height)
+        if (this.position.y + this.velocity.y > 0 && this.position.y + this.height + this.velocity.y < canvas.height)
         this.position.y += this.velocity.y
     }
 };
@@ -66,6 +66,16 @@ addEventListener('keydown', (event) => {
         // [go down]
         case 's':
             paddle1.velocity.y = 1
+            break
+
+        // [go up]
+        case 'ArrowUp':
+            paddle2.velocity.y = -1
+            break
+
+        // [go down]
+        case 'ArrowDown':
+            paddle2.velocity.y = 1
             break
     }
 });
