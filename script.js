@@ -55,7 +55,7 @@ class Ball {
     }
 
     draw() {
-        c.fillStyle = 'white',
+        c.fillStyle = 'white';
         c.fillRect(
             this.position.x, 
             this.position.y, 
@@ -88,7 +88,8 @@ class Ball {
         }
 
         // [reverse y directions]
-        if (this.position.y + this.height + this.velocity.y >= canvas.width || this.position.y + this.velocity.y <= 0) {
+        if (this.position.y + this.height + this.velocity.y >= canvas.width || 
+            this.position.y + this.velocity.y <= 0) {
 
             this.velocity.y = -this.velocity.y;
         }
@@ -102,34 +103,34 @@ const paddle1 = new Paddle({
     position: {
         x: 10,
         y: 100
-    },
+    }
 });
 
 const paddle2 = new Paddle({
     position: {
         x: canvas.width - 10 * 2,
         y: 100
-    },
+    }
 });
 
 const ball = new Ball({
     position: {
         x: canvas.width / 2,
         y: canvas.height / 2
-    },
+    }
 });
 
 function animate() {
     requestAnimationFrame(animate)
-    c.fillStyle = 'black'
-    c.fillRect(0, 0, canvas.width, canvas.height)
-    paddle1.update()
-    paddle2.update()
+    c.fillStyle = 'black';
+    c.fillRect(0, 0, canvas.width, canvas.height);
+    paddle1.update();
+    paddle2.update();
 
-    ball.update()
+    ball.update();
 };
 
-animate()
+animate();
 
 addEventListener('keydown', (event) => {
 
@@ -138,22 +139,22 @@ addEventListener('keydown', (event) => {
     switch (event.key) {
         // [go up]
         case 'w':
-            paddle1.velocity.y = -speed
-            break
+            paddle1.velocity.y = -speed;
+            break;
 
         // [go down]
         case 's':
-            paddle1.velocity.y = speed
-            break
+            paddle1.velocity.y = speed;
+            break;
 
         // [go up]
         case 'ArrowUp':
-            paddle2.velocity.y = -speed
-            break
+            paddle2.velocity.y = -speed;
+            break;
 
         // [go down]
         case 'ArrowDown':
-            paddle2.velocity.y = speed
-            break
+            paddle2.velocity.y = speed;
+            break;
     }
 });
