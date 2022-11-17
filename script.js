@@ -39,12 +39,15 @@ const paddle2 = new Paddle({
     },
 });
 
-paddle1.draw()
-paddle2.draw()
-
 function animate() {
     requestAnimationFrame(animate)
-}
+    c.fillStyle = 'black'
+    c.fillRect(0, 0, canvas.width, canvas.height)
+    paddle1.draw()
+    paddle2.draw()
+};
+
+animate()
 
 addEventListener('keydown', (event) => {
     switch (event.key) {
