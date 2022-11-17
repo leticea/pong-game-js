@@ -39,8 +39,8 @@ class Ball {
             x: 1,
             y: 1
         }
-        this.width = 5
-        this.height = 5
+        this.width = 20
+        this.height = 20
     }
 
     draw() {
@@ -54,6 +54,8 @@ class Ball {
 
     update() {
         this.draw()
+        this.position.x += this.velocity.x
+        this.position.y += this.velocity.y
     }
 };
 
@@ -84,6 +86,8 @@ function animate() {
     c.fillRect(0, 0, canvas.width, canvas.height)
     paddle1.update()
     paddle2.update()
+
+    ball.update()
 };
 
 animate()
