@@ -39,14 +39,21 @@ class Ball {
             x: 1,
             y: 1
         }
+        this.width = 5
+        this.height = 5
     }
 
     draw() {
+        c.fillStyle = 'white',
         c.fillRect(
             this.position.x, 
             this.position.y, 
             this.width, 
             this.height)
+    }
+
+    update() {
+        this.draw()
     }
 };
 
@@ -61,6 +68,13 @@ const paddle2 = new Paddle({
     position: {
         x: canvas.width - 10 * 2,
         y: 100
+    },
+});
+
+const ball = new Ball({
+    position: {
+        x: canvas.width / 2,
+        y: canvas.height / 2
     },
 });
 
