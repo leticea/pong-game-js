@@ -8,10 +8,10 @@
 <br>
 
 <p align="center">
-  <img alt="pokedex" src=".github/image.png">
+  <img alt="pong" src=".github/image.png">
 </p>
 
-## Pokédex
+## Pong Game
 
 ## 🚀 Tecnologias
 
@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Projeto desenvolvido com aplicação JavaScript.
 
-Aula do canal [Roger Melo](https://www.youtube.com/watch?v=Uptu3NrBFBM)
+Aula do canal [Chris Courses](https://www.youtube.com/watch?v=gCe_CNyPk5k)
 
 ## 🚀 Como Rodar
 
