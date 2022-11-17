@@ -34,10 +34,28 @@ const paddle1 = new Paddle({
 
 const paddle2 = new Paddle({
     position: {
-        x: canvas.width - 10 *2,
+        x: canvas.width - 10 * 2,
         y: 100
     },
 });
 
 paddle1.draw()
 paddle2.draw()
+
+function animate() {
+    requestAnimationFrame(animate)
+}
+
+addEventListener('keydown', (event) => {
+    switch (event.key) {
+        // [go up]
+        case 'w':
+            paddle1.velocity.y = -1
+            break
+
+        // [go down]
+        case 's':
+            paddle1.velocity.y = 1
+            break
+    }
+});
