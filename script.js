@@ -60,6 +60,18 @@ class Ball {
 
     update() {
         this.draw()
+
+        if (this.position.x + this.width + this.velocity.x >= canvas.width || this.position.x + this.velocity.x <= 0) {
+
+            this.velocity.x = -this.velocity.x
+        }
+
+        // [reverse y directions]
+        if (this.position.y + this.height + this.velocity.y >= canvas.width || this.position.y + this.velocity.y <= 0) {
+
+            this.velocity.y = -this.velocity.y
+        }
+
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y
     }
