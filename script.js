@@ -8,12 +8,25 @@ class Paddle {
             x: 0,
             y: 0
         }
+        this.width = 10
+        this.height = 100
     }
 
     draw() {
-        c.fillRect(this.position.x, this.position.y)
+        c.fillStyle = 'white',
+        c.fillRect(
+            this.position.x, 
+            this.position.y,
+            this.width,
+            this.height)
     }
-}
+};
 
-c.fillStyle = 'red';
-c.fillRect(0, 0, 100, 100)
+const paddle1 = new Paddle({
+    position: {
+        x: 10,
+        y: 100
+    },
+});
+
+paddle1.draw()
