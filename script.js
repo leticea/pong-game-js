@@ -1,6 +1,9 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
 class Paddle {
     constructor({position}) {
         this.position = position
@@ -29,4 +32,12 @@ const paddle1 = new Paddle({
     },
 });
 
+const paddle2 = new Paddle({
+    position: {
+        x: canvas.width - 10 *2,
+        y: 100
+    },
+});
+
 paddle1.draw()
+paddle2.draw()
