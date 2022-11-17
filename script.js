@@ -10,7 +10,7 @@ class Paddle {
         this.velocity = {
             x: 0,
             y: 0
-        }
+        }        
         this.width = 10;
         this.height = 100;
     }
@@ -45,7 +45,6 @@ class Ball {
             x: Math.random() - 0.5 >= 0 ? -speed : speed,
             y: Math.random() - 0.5 >= 0 ? -speed : speed,
         }
-
         this.velocity = {
             x: direction.x,
             y: direction.y
@@ -93,7 +92,6 @@ class Ball {
 
             this.velocity.y = -this.velocity.y;
         }
-
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
     }
@@ -113,8 +111,6 @@ const paddle2 = new Paddle({
     }
 });
 
-//canvas.width - 10 * 2
-
 const ball = new Ball({
     position: {
         x: canvas.width / 2,
@@ -126,9 +122,9 @@ function animate() {
     requestAnimationFrame(animate)
     c.fillStyle = 'black';
     c.fillRect(0, 0, canvas.width, canvas.height);
+    
     paddle1.update();
     paddle2.update();
-
     ball.update();
 };
 
