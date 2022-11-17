@@ -37,8 +37,8 @@ class Ball {
         this.position = position
 
         const direction = {
-            x: Math.random() - 0.5 >= 0 ? -1 : 1,
-            y: Math.random() - 0.5 >= 0 ? -1 : 1,
+            x: Math.random() - 0.5 >= 0 ? 5 : 7,
+            y: Math.random() - 0.5 >= 0 ? 5 : 7,
         }
 
         this.velocity = {
@@ -61,7 +61,12 @@ class Ball {
     update() {
         this.draw()
 
-        if (this.position.x + this.width + this.velocity.x >= canvas.width || this.position.x + this.velocity.x <= 0) {
+        const rightSide = this.position.x + this.width + this.velocity.x;
+        const leftSide = this.position.x + this.velocity.x;
+        const bottomSide = this.position.y + this.height;
+        const topSide = this.position.y;
+
+        if ((rightSide >= paddle2.position.x && bottomSide >= paddle2.position.y && topSide <= paddle2.position.y + paddle2.height) ||  leftSide <= 0) {
 
             this.velocity.x = -this.velocity.x
         }
@@ -112,7 +117,7 @@ animate()
 
 addEventListener('keydown', (event) => {
 
-    const speed = 3;
+    const speed = 7;
 
     switch (event.key) {
         // [go up]
