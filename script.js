@@ -57,25 +57,28 @@ function animate() {
 animate()
 
 addEventListener('keydown', (event) => {
+
+    const speed = 3;
+
     switch (event.key) {
         // [go up]
         case 'w':
-            paddle1.velocity.y = -1
+            paddle1.velocity.y = -speed
             break
 
         // [go down]
         case 's':
-            paddle1.velocity.y = 1
+            paddle1.velocity.y = speed
             break
 
         // [go up]
         case 'ArrowUp':
-            paddle2.velocity.y = -1
+            paddle2.velocity.y = -speed
             break
 
         // [go down]
         case 'ArrowDown':
-            paddle2.velocity.y = 1
+            paddle2.velocity.y = speed
             break
     }
 });
