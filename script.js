@@ -36,7 +36,7 @@ class Ball {
     constructor({ position }) {
         this.position = position
 
-        const speed = 3;
+        const speed = 5;
 
         const direction = {
             x: Math.random() - 0.5 >= 0 ? -speed : speed,
@@ -126,7 +126,7 @@ animate()
 
 addEventListener('keydown', (event) => {
 
-    const speed = 4;
+    const speed = 9;
 
     switch (event.key) {
         // [go up]
