@@ -8,7 +8,7 @@
 <br>
 
 <p align="center">
-  <img alt="pong" src=".github/image.png">
+  <img alt="" src=".github/image.png">
 </p>
 
 ## Pong Game
@@ -17,9 +17,9 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) 
-- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5) 
-- [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS) 
+- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
+- [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
 ## 💻 Projeto
 
@@ -30,7 +30,7 @@ Aula do canal [Chris Courses](https://www.youtube.com/watch?v=gCe_CNyPk5k)
 ## 🚀 Como Rodar
 
 - Clone o projeto.
-- Entre no repositório e click duas vezes no arquivo index.html
+- Entre no repositório e click duas vezes no arquivo index.html.
 
 ## 🤔 Como contribuir
 
